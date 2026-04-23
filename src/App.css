@@ -1,0 +1,49 @@
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+/* BACKGROUND MUST BE FIXED */
+.bg-animation {
+  position: fixed;
+  inset: 0; /* shorthand for top/left/right/bottom */
+
+  width: 100vw;
+  height: 100vh;
+
+  z-index: -1;
+
+  background: linear-gradient(-45deg, #0f2027, #4d8699, #558e7f, #1c1c1c);
+  background-size: 400% 400%;
+
+  animation: gradientMove 12s ease infinite;
+}
+
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* CONTENT ABOVE BACKGROUND */
+.main-content {
+  padding-top: 80px; /* adjust based on header height */
+  position: relative;
+  z-index: 1;
+}
+
+header,
+footer {
+  position: relative;
+  z-index: 1;
+}

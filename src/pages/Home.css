@@ -1,0 +1,167 @@
+/* =========================
+   HOME WRAPPER
+========================= */
+.home {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 40px 20px;
+  gap: 60px;
+}
+
+/* =========================
+   HERO CARD
+========================= */
+.home-card {
+  width: 100%;
+  max-width: 520px;
+
+  padding: 30px;
+  text-align: center;
+
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+
+  animation: fadeIn 0.8s ease;
+  color:black
+}
+
+/* PROFILE IMAGE */
+.profile-img {
+  width: clamp(100px, 25vw, 140px);
+  height: clamp(100px, 25vw, 140px);
+
+  border-radius: 50%;
+  border: 3px solid white;
+
+  margin-bottom: 15px;
+  object-fit: cover;
+
+  transition: transform 0.3s ease;
+}
+
+.profile-img:hover {
+  transform: scale(1.08) rotate(2deg);
+}
+
+/* TEXT */
+h1 {
+  font-size: clamp(22px, 4vw, 32px);
+  color: white;
+  margin: 10px 0;
+}
+
+h3 {
+  font-size: clamp(14px, 2.5vw, 18px);
+  color: black;
+}
+
+.tagline {
+  margin-top: 15px;
+  font-size: clamp(13px, 2vw, 15px);
+  color: black;
+  line-height: 1.5;
+}
+
+/* =========================
+   EXPERIENCE SECTION
+========================= */
+.experience-section {
+  width: 100%;
+  text-align: center;
+}
+
+.section-title {
+  color: white;
+  font-size: clamp(20px, 4vw, 28px);
+  margin-bottom: 25px;
+}
+
+/* GRID */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* CARD */
+.exp-card {
+  background: rgba(128, 207, 212, 0.08);
+  backdrop-filter: blur(10px);
+
+  border-radius: 15px;
+  padding: 20px;
+
+  color: black;
+  text-align: left;
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  transition: all 0.3s ease;
+}
+
+.exp-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* HIGHLIGHT CARD */
+.exp-card.highlight {
+  background: linear-gradient(135deg, #00c6ff33, #0072ff33);
+  border: 1px solid #00c6ff;
+}
+
+/* LIST */
+.exp-card ul {
+  padding-left: 18px;
+  margin-top: 10px;
+}
+
+.exp-card li {
+  margin-bottom: 6px;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   MOBILE FIXES
+========================= */
+@media (max-width: 768px) {
+  .home {
+    padding: 20px 10px;
+    gap: 40px;
+  }
+
+  .home-card {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .exp-card {
+    padding: 15px;
+  }
+}
